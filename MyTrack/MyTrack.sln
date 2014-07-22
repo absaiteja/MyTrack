@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTrack", "MyTrack\MyTrack.csproj", "{F4A25DE5-1108-4A1F-A129-270EBC53DB34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBOperations", "..\..\..\..\Desktop\work\DOTNET\DBOperations\DBOperations\DBOperations.csproj", "{D028E083-0C77-4D77-854C-82064FFE6B41}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBOperations", "MyTrack\DBOperations\DBOperations\DBOperations.csproj", "{D028E083-0C77-4D77-854C-82064FFE6B41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
