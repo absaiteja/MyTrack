@@ -1,0 +1,39 @@
+﻿body {
+}
+#MiddleDiv {
+    width: 500px;
+    height: 80%;
+    margin: auto;
+    margin-top: 5%;
+}
+.ControlDiv{
+    margin-bottom:5%;
+    margin-top: 2%;
+}
+.Mandatory {
+    margin-left:1%;
+}
+.ControlDiv span {
+    width:145px;
+    display:inline-block;
+}
+.ControlDiv label span {
+    display:inline;
+    color:red;
+}
+.RightSpan input[type="text"] {
+    width: 200%;
+    height: 33px;
+    border-radius: 10px;
+}
+.RightSpan input[type="text"]:hover {
+   background-color:#FFF5EE;
+}
+
+
+
+.ControlDiv input[type="button"], input[type="submit"] {
+    width:85%;
+    height:30px;
+    border-radius:5px;
+}
