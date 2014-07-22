@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBOperations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Visual Studio 2012\Projects\DBOperations\DBOperations\bin\Debug\DBOperations.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -57,34 +61,39 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.aspx" />
     <Content Include="Chosen\choosen\chosen-sprite%402x.png" />
     <Content Include="Chosen\choosen\chosen-sprite.png" />
     <Content Include="Chosen\choosen\chosen.jquery.min.js" />
     <Content Include="Chosen\choosen\chosen.min.css" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="CSS\Styles.css" />
     <Content Include="AdminHome.aspx" />
-    <Content Include="Scripts\images\animated-overlay.gif" />
-    <Content Include="Scripts\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
-    <Content Include="Scripts\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
-    <Content Include="Scripts\images\ui-bg_flat_10_000000_40x100.png" />
-    <Content Include="Scripts\images\ui-bg_glass_100_f6f6f6_1x400.png" />
-    <Content Include="Scripts\images\ui-bg_glass_100_fdf5ce_1x400.png" />
-    <Content Include="Scripts\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Scripts\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
-    <Content Include="Scripts\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-    <Content Include="Scripts\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-    <Content Include="Scripts\images\ui-icons_222222_256x240.png" />
-    <Content Include="Scripts\images\ui-icons_228ef1_256x240.png" />
-    <Content Include="Scripts\images\ui-icons_ef8c08_256x240.png" />
-    <Content Include="Scripts\images\ui-icons_ffd27a_256x240.png" />
-    <Content Include="Scripts\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="HomePage.aspx" />
+    <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-ui.min.css" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\Admin.js" />
+    <Content Include="Scripts\MyScript.js" />
+    <Content Include="Users.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="AdminHome.aspx.cs">
@@ -94,11 +103,32 @@
     <Compile Include="AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Response.cs" />
   </ItemGroup>
@@ -115,10 +145,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\work\DOTNET\DBOperations\DBOperations\DBOperations.csproj">
-      <Project>{d028e083-0c77-4d77-854c-82064ffe6b41}</Project>
-      <Name>DBOperations</Name>
-    </ProjectReference>
+    <Folder Include="NewFolder1\" />
+    <Folder Include="Scripts\Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
