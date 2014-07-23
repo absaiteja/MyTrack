@@ -68,7 +68,7 @@
             <div id="Passenger">
                 <div>
                     <asp:Label ID="lblUName" runat="server" Text="Email ID :"></asp:Label>
-                    <asp:TextBox ID="txtUName" runat="server" placeholder="Enter your Email Id"></asp:TextBox>
+                    <asp:TextBox ID="txtUEmail" runat="server" placeholder="Enter your Email Id"></asp:TextBox>
                 </div>
                 <div>
                     <asp:Label ID="lblUPassword" runat="server" Text="Password :"></asp:Label>
@@ -84,7 +84,23 @@
                 </div>
             </div>
             <div id ="Contact">
-
+                <p>
+                    Customer Care No. 040-23340000
+                        Fax no.040-23345400
+                        Chennai Customer Care No. 040-25300000
+ 
+                        For Railway tickets booked through My Track
+                        General Information
+                        I-tickets/e-tickets: care@mytrack.co.in
+                </p>
+                <p>
+                        Registered Office / Corporate Office :
+                        My Track Corporation Ltd.,
+                        5th Floor, White House Building,
+                        Begumpet,Hyderabad 500072.
+                        Tel: 040-23311263/23311264
+                        Fax: 040-23311259
+                </p>
             </div>
         </form>
     </div>
