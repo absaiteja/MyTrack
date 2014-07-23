@@ -1,1 +1,2 @@
-MyTrack/MyTrack/bin/MyTrack.dll
+*.dll
+*.pdb
