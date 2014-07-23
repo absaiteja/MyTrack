@@ -63,6 +63,7 @@
     <Content Include="Chosen\choosen\chosen.min.css" />
     <Content Include="CSS\Styles.css" />
     <Content Include="AdminHome.aspx" />
+    <Content Include="DBOperations.asmx" />
     <Content Include="Scripts\images\animated-overlay.gif" />
     <Content Include="Scripts\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Scripts\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -82,9 +83,14 @@
     <Content Include="Scripts\jquery-ui.min.css" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\Admin.js" />
+    <Content Include="Scripts\MyTrackScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBOperations.asmx.cs">
+      <DependentUpon>DBOperations.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="AdminHome.aspx.cs">
