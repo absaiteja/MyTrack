@@ -14,6 +14,8 @@
             "Clear": ClearAll
         }
     })
+    $('#admin').dialog("option", "title", "Admin Login");
+
     function CloseDialog() {
         $("#admin").dialog("close");
     }
@@ -38,17 +40,18 @@
         width: 400,
         dialogClass: 'no-close',
         buttons: {
-            "Close": CloseDialog,
-            "Clear": ClearAll
+            "Close": ClosePassenger,
+            "Clear": ClearPassenger
         }
     })
-    function CloseDialog() {
+    $('#Passenger').dialog("option", "title", "User Login");
+    function ClosePassenger() {
         $("#Passenger").dialog("close");
     }
 
-    function ClearAll() {
-        $('#txtEmail').val("");
-        $('#txtPassword').val("");
+    function ClearPassenger() {
+        $('#txtUEmail').val("");
+        $('#txtUPassword').val("");
     }
     $("#btnPassenger").click(function () {
         $("#Passenger").dialog("open");
@@ -89,13 +92,15 @@
         my: "center",
         at: "center",
         of: window,
-        width: 400,
+        width: 500,
+        height:400,
         dialogClass: 'no-close',
         buttons: {
-            "Close": CloseDialog
+            "Close": CloseContact
         }
     })
-    function CloseDialog() {
+    $('#Contact').dialog("option", "title", "Contact Us");
+    function CloseContact() {
         $("#Contact").dialog("close");
     }
     $("#btnContact").click(function () {
