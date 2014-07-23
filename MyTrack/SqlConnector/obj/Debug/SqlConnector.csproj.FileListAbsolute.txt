@@ -2,3 +2,8 @@ C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\SqlConnector\bin\Debug\SqlConn
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\SqlConnector\bin\Debug\SqlConnector.pdb
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\SqlConnector\obj\Debug\SqlConnector.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\SqlConnector\obj\Debug\SqlConnector.pdb
+C:\Users\trainee\Documents\GitHub\MyTrack\MyTrack\SqlConnector\bin\Debug\SqlConnector.dll
+C:\Users\trainee\Documents\GitHub\MyTrack\MyTrack\SqlConnector\bin\Debug\SqlConnector.pdb
+C:\Users\trainee\Documents\GitHub\MyTrack\MyTrack\SqlConnector\obj\Debug\SqlConnector.csprojResolveAssemblyReference.cache
+C:\Users\trainee\Documents\GitHub\MyTrack\MyTrack\SqlConnector\obj\Debug\SqlConnector.dll
+C:\Users\trainee\Documents\GitHub\MyTrack\MyTrack\SqlConnector\obj\Debug\SqlConnector.pdb

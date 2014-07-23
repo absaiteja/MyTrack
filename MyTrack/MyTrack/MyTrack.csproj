@@ -77,8 +77,11 @@
     <Content Include="Scripts\jquery-ui.min.css" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\MyScript.js" />
+    <Content Include="Scripts\MyTrack.js" />
     <Content Include="Scripts\MyTrackScript.js" />
     <Content Include="Scripts\Styles.css" />
+    <Content Include="TrainDetailsService.asmx" />
+    <Content Include="UsersHome.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +113,7 @@
     <Compile Include="Entities\Fares.cs" />
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\TrainDetails.cs" />
     <Compile Include="Entities\Users.cs" />
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -123,6 +127,17 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TrainDetailsService.asmx.cs">
+      <DependentUpon>TrainDetailsService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UsersHome.aspx.cs">
+      <DependentUpon>UsersHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersHome.aspx.designer.cs">
+      <DependentUpon>UsersHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Response.cs" />
   </ItemGroup>

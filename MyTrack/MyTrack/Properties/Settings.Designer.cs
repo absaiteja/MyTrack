@@ -31,5 +31,23 @@ namespace MyTrack.Properties {
                 return ((string)(this["Connection"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9999")]
+        public int FailureId {
+            get {
+                return ((int)(this["FailureId"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5555")]
+        public int SuccessId {
+            get {
+                return ((int)(this["SuccessId"]));
+            }
+        }
     }
 }
