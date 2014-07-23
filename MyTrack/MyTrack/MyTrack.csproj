@@ -94,6 +94,7 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Fares.cs" />
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="AdminHome.aspx.cs">
@@ -103,6 +104,7 @@
     <Compile Include="AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Users.cs" />
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -145,7 +147,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
     <Folder Include="Scripts\Images\" />
   </ItemGroup>
   <PropertyGroup>
