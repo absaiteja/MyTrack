@@ -112,15 +112,20 @@
                 <div id="PaymentDetails">
                     <div class="ControlDiv">
                         <span>
-                            <label for="txtDepartureTime">
+                            <label for="ddlFareDetails">
                                 Train Name :<span class="Mandatory">*</span>
                             </label>
                         </span>
                         <span></span>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div id="FareDetails">
                     <select class="chosen" style="width: 200px">
+=======
+                <div id="ddlFareDetails">
+                    <select class="chosen" style="width: 200px;">
+>>>>>>> origin/master
                         <option>JanmabhumiExpress</option>
                         <option>RathnachalExpress</option>
                         <option>GouthmoExpress</option>

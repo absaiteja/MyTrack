@@ -22,16 +22,13 @@
     color:red;
 }
 .RightSpan input[type="text"] {
-    width: 200%;
+    width: 250%;
     height: 33px;
     border-radius: 10px;
 }
 .RightSpan input[type="text"]:hover {
-   background-color:#FFF5EE;
+   background-color:ThreeDLightShadow;
 }
-
-
-
 .ControlDiv input[type="button"], input[type="submit"] {
     width:85%;
     height:30px;

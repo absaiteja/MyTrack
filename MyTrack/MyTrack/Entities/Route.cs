@@ -29,7 +29,7 @@ namespace MyTrack.Entities
         [Display(Name = "Fare")]
         public double Fare { get; set; }
 
-        public Response Create()
+        public bool Create()
         {
             string strConnection = Properties.Settings.Default.Connection;
             string[] strArrParameterName = { "StationId", "StationName", "Fare"};
@@ -44,10 +44,10 @@ namespace MyTrack.Entities
             if (!blnResult)
             {
                 objDBOperations.CloseConnection();
-                return new Response(9999, string.Format(Failure_MSG, "insert"));
+                return true;
             }
             objDBOperations.CloseConnection();
-            return new Response(5555, string.Format(Success_MSG, "inserted"));
+            return false;
 
 
         }

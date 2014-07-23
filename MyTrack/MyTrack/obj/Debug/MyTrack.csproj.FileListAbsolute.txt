@@ -5,9 +5,23 @@ C:\Users\rajesh\Documents\Visual Studio 2012\Projects\MyTrack\MyTrack\bin\DBOper
 C:\Users\rajesh\Documents\Visual Studio 2012\Projects\MyTrack\MyTrack\bin\DBOperations.pdb
 C:\Users\rajesh\Documents\Visual Studio 2012\Projects\MyTrack\MyTrack\obj\Debug\MyTrack.dll
 C:\Users\rajesh\Documents\Visual Studio 2012\Projects\MyTrack\MyTrack\obj\Debug\MyTrack.pdb
+<<<<<<< HEAD
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\MyTrack.dll
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\MyTrack.pdb
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\DBOperations.dll
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\DBOperations.pdb
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.csprojResolveAssemblyReference.cache
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.dll
+C:\Users\rajesh\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.pdb
+=======
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.pdb
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\MyTrack.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\MyTrack.pdb
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\DBOperations.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\DBOperations.pdb
+<<<<<<< HEAD
+=======
+C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.csprojResolveAssemblyReference.cache
+>>>>>>> origin/master
+>>>>>>> origin/master
