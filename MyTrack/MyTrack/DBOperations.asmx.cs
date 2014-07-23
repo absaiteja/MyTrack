@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyTrack.Entities;
+using MyTrack.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +24,26 @@ namespace MyTrack
         {
             return "Hello World";
         }
-       
+        [WebMethod]
+        public bool InsertUsers()
+        {
+
+            return false;
+        }
+        [WebMethod]
+        public List<Entities.Route> GetAllRoutes()
+        {
+            List<Entities.Route> lstRoutes = new List<Entities.Route>();
+            Route objRoute = new Route();
+            lstRoutes = Entities.Route.GetAllDetails();
+            return lstRoutes;
+        }
+        [WebMethod]
+        public Response InsertRoute()
+        {
+            Route objRoute = new Route();
+            objRoute.Create();
+        }
+
     }
 }
