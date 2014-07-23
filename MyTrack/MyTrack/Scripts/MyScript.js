@@ -107,5 +107,28 @@
         $("#Contact").dialog("open");
         return false;
     })
+    $('#btnSubmit').click(function () {
+        var Email = $('#txtEmail').val();
+        var Password = $('#txtPassword').val();
+        AjaxAdminLogin(Email,Password, SuccessCall, FailureCallBack);
+    })
+    function SuccessCall(data) {
+        alert(data.d);
+    }
+    function FailureCallBack(XHR, msg, exception) {
+        debugger;
+        alert(msg);
+    }
+    function AjaxAdminLogin(Email, Password, SuccessCall, FailureCallBack) {
+        debugger;
+        $.ajax({
+            url: "HomePage.aspx?Email=" + Email + "&Password=" + Password,
+            async: true,
+            success: SuccessCall,
+            error: FailureCallBack
+        })
+    }
+
+
     });
     

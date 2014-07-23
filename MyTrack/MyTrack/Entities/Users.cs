@@ -57,7 +57,7 @@ namespace MyTrack.Entities
             objparameteres.ExecuteQuery(strQuery, strParameters, strParametersValues);
             return true;
         }
-        public static Users Get()
+        public static Users Get(string strParameterValues)
         {
             string strQuery = @"SELECT [UserID]
                                       ,[UserName]
@@ -66,11 +66,11 @@ namespace MyTrack.Entities
                                       ,[Password]
                                       ,[Gender]
                                   FROM [Users] 
-                                  WHERE UserID = @UserID ";
+                                  WHERE EmailID = @EmailID ";
             Users objUsers = new Users();
             string strConnection = Properties.Settings.Default.Connection;
-            string[] strparameters = { "UserID" };
-            object[] strArrParameterValues = { };
+            string[] strparameters = { "EmailID" };
+            object[] strArrParameterValues = { strParameterValues };
             DataTable dtRetval = new DataTable();
             int intTemp = 0;
             dtRetval = DBOperations.ExecuteQueryForAll(strConnection, strQuery, strparameters, strArrParameterValues);

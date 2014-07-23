@@ -11,4 +11,3 @@ C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\MyTrack.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\MyTrack.pdb
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\DBOperations.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\bin\DBOperations.pdb
-C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\obj\Debug\MyTrack.csprojResolveAssemblyReference.cache

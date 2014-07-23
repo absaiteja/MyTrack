@@ -4,6 +4,5 @@ C:\Users\sandhya\Documents\Visual Studio 2012\Projects\DBOperations\DBOperations
 C:\Users\sandhya\Documents\Visual Studio 2012\Projects\DBOperations\DBOperations\obj\Debug\DBOperations.pdb
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\DBOperations\DBOperations\bin\Debug\DBOperations.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\DBOperations\DBOperations\bin\Debug\DBOperations.pdb
-C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\DBOperations\DBOperations\obj\Debug\DBOperations.csprojResolveAssemblyReference.cache
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\DBOperations\DBOperations\obj\Debug\DBOperations.dll
 C:\Users\sandhya\Documents\GitHub\MyTrack\MyTrack\MyTrack\DBOperations\DBOperations\obj\Debug\DBOperations.pdb

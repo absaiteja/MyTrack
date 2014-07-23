@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="MyTrack.Users" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Passengers.aspx.cs" Inherits="MyTrack.Users" %>
 
 <!DOCTYPE html>
 

@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div id="FareDetails">
-                    <select class="chosen" style="width: 200px;">
+                    <select class="chosen" style="width: 200px">
                         <option>JanmabhumiExpress</option>
                         <option>RathnachalExpress</option>
                         <option>GouthmoExpress</option>
