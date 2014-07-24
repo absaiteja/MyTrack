@@ -15,7 +15,7 @@ function PageLoad() {
         width: '60%',
         height: '300px',
         columns: [
-        { text: 'Train Number', datafield: 'TrainNumber', hidden: true,width:50 },
+        { text: 'Train Number', datafield: 'TrainNumber',width:40, hidden: true},
         { text: 'Train', datafield: 'TrainName',width:40 },
         { text: 'From', datafield: 'Source',width:40 },
         { text: 'To', datafield: 'Destination',width:40 },
@@ -64,21 +64,44 @@ function PageLoad() {
        }
 
  function CreateTrain() {
-    ajaxCaller("TrainDetailsService.asmx/CreateTrainService", "{}", SuccessCall, FailureCall);
+     ajaxCaller("TrainDetailsService.asmx/CreateTrainService", "{}", SuccessCallOnCreateTrain, FailureCallOnCreateTrain);
  }
 
  function CreateTicket() {
-     var objTicket= {$('#').val(),$('#').val(),$('#').val(),$('#').val(),$('#').val()};
-     ajaxCaller("TrainDetailsService.asmx/CreateTrainService", "{}", SuccessCall, FailureCall);
+    
+     var varPnr="99999";
+     var ddlFromVal = $('#ddlFrom').find('option:selected');
+     var ddlFromText = ddlFromVal.text();
+     var ddlToVal = $('ddlTo').find('option:selected');
+     var ddlToText = ddlToVal.text();
+     var dateJourneyDate =$('#datepicker').val();
+     var date = new Date(dateJourneyDate);
+     var dateFormattedDate = date.toString('yyyy-MM-dd');
+     var currDate = new Date();
+     var formattedDate = currDate.getFullYear() + "-" + currDate.getMonth() + "-" + currDate.getDate();
+     var ddllNoOfPassengersVal = $('ddllNoOfPassengers').find('option:selected');
+     var ddllNoOfPassengersText = ddllNoOfPassengersVal.text();
+     var varArrivalTime= "12:00";
+     var varDepartureTime= "12:00";
+     var varFare="1000";
+     var varName =$('#datepicker').val();
+     var varAge =$('#datepicker').val();
+     $("input:radio[name=gender]").click(function() {
+         var varGender = $(this).val();
+     });
+     var ddlBerthVal = ddlBerth.find('option:selected');
+     var ddlBerthText = ddlBerthVal.text();
+     var objTicket= {varPnr,$('#').val(),$('#').val(),$('#').val(),$('#').val(),$('#').val()};
+     ajaxCaller("TrainDetailsService.asmx/CreateTrainService", "{}", SuccessCallOnCreateTicket, FailureCallOnCreateTicket);
  }
 
 
  function BindCities() {
      var objData = JSON.stringify({});
-     ajaxCaller("TrainDetailsService.asmx/GetAllTrainsService", objData , SuccessCall, FailureCall);
+     ajaxCaller("TrainDetailsService.asmx/GetAllTrainsService", objData , SuccessCallOnBindCities, FailureCallOnBindCities);
  }
 
-function SuccessCall(data) {
+function SuccessCallOnBindCities(data) {
     var cities = data.d;
     var source = {
         datatype: 'json',
@@ -98,7 +121,7 @@ function SuccessCall(data) {
     $('#citiesGrid').jqxGrid('source', dataAdapter);
 }
 
-function FailureCall(xhr, msg, exception) {
+function FailureCallOnBindCities(xhr, msg, exception) {
     alert(msg);
 }
 function ajaxCaller(url, dataToSend, SuccessCallBack, FailureCallBack) {

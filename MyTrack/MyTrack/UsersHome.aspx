@@ -12,245 +12,262 @@
     <link href="Chosen/choosen/chosen.min.css" rel="stylesheet" />
     <script src="jqwidgets/jqx-all.js"></script>
     <link href="jqwidgets/styles/jqx.base.css" rel="stylesheet" />
-     <link href="jqwidgets/styles/jqx.metro.css" rel="stylesheet" />
-   <%-- <link href="CSS/StylesUsers.css" rel="stylesheet" />--%>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"/>
-  <%--  <link rel="stylesheet" href="/resources/demos/style.css"/>--%>
+    <link href="jqwidgets/styles/jqx.metro.css" rel="stylesheet" />
+    <%-- <link href="CSS/StylesUsers.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <%--  <link rel="stylesheet" href="/resources/demos/style.css"/>--%>
     <script src="Scripts/MyTrack.js"></script>
-      
+
 </head>
 <body>
     <form id="frmUsers" runat="server">
-    <div id="Usertabs">
-  <ul>
-    <li><a href="#tabHome">Home</a></li>
-    <li><a href="#tabReservations">Reservations</a></li>
-    <li><a href="#tabPNR">PNR</a></li>
-      <li><a href="#tabScheduling">Scheduling</a></li>
-      <li><a href="#tabLogout">Logout</a></li>
-  </ul>
-  <div id="tabHome">
-     <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-  </div>
-  <div id="tabReservations">
-   <div class="Reservations-div">
-       <fieldset id="fdsSearchTrains">
-           <legend>Search Trains</legend>
-            <div class="middleDiv">
+        <div id="Usertabs">
+            <ul>
+                <li><a href="#tabHome">Home</a></li>
+                <li><a href="#tabReservations">Reservations</a></li>
+                <li><a href="#tabPNR">PNR</a></li>
+                <li><a href="#tabScheduling">Scheduling</a></li>
+                <li><a href="#tabLogout">Logout</a></li>
+            </ul>
+            <div id="tabHome">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            </div>
+            <div id="tabReservations">
+                <div class="Reservations-div">
+                    <fieldset id="fdsSearchTrains">
+                        <legend>Search Trains</legend>
+                        <div class="middleDiv">
                             <span class="leftSpan">
                                 <label for="txtTrainName">
                                     From :<span class="Mandatory">*</span>
                                 </label>
                             </span>
                             <span class="rightSpan">
-                               <select class="chosen ddlWidth" id="ddlFrom">
-                      <option value="Agra">Agra</option>
-                      <option value="Hyderabad">Hyderabad</option>
-                      <option value="Delhi">Delhi</option>
-                      <option value="Chennai">Chennai</option>
-                    </select>
+                                <select class="chosen ddlWidth" id="ddlFrom">
+                                    <option value="Agra">Agra</option>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Chennai">Chennai</option>
+                                </select>
                             </span>
-           </div>
-           <asp:Label ID="lblDisplayHtml" runat="server"></asp:Label>
-           <div class="middleDiv">
+                        </div>
+                        <asp:Label ID="lblDisplayHtml" runat="server"></asp:Label>
+                        <div class="middleDiv">
                             <span class="leftSpan">
                                 <label for="txtTrainName">
                                     To :<span class="Mandatory">*</span>
                                 </label>
                             </span>
                             <span class="rightSpan">
-                               <select class="chosen ddlWidth" id="ddlTo">
-                      <option value="Agra">Agra</option>
-                      <option value="Hyderabad">Hyderabad</option>
-                      <option value="Delhi">Delhi</option>
-                      <option value="Chennai">Chennai</option>
-                    </select>
+                                <select class="chosen ddlWidth" id="ddlTo">
+                                    <option value="Agra">Agra</option>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Chennai">Chennai</option>
+                                </select>
                             </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="datepicker">
-                    Date Of Journey :<span class="Mandatory">*</span>
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input type="text" id="datepicker"/>
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="datepicker">
-                    Berth :<span class="Mandatory">*</span>
-                </label>
-            </span>
-            <span class="rightSpan">
-                <select class="chosen ddlWidth">
-                      <option value="1">Lower</option>
-                      <option value="2">Middle</option>
-                      <option value="3">Upper</option>
-                </select>
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="rightSpan">
-                <input type="button" id="btnSearchTrains" value="Find Trains" />
-            </span>
-           </div>
-            </fieldset>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="datepicker">
+                                    Date Of Journey :<span class="Mandatory">*</span>
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input type="text" id="datepicker" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="datepicker">
+                                    Berth :<span class="Mandatory">*</span>
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <select class="chosen ddlWidth" id="ddlBerth">
+                                    <option value="1">Lower</option>
+                                    <option value="2">Middle</option>
+                                    <option value="3">Upper</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="rightSpan">
+                                <input type="button" id="btnSearchTrains" value="Find Trains" />
+                            </span>
+                        </div>
+                    </fieldset>
 
-       <fieldset id="fdsShowTrains">
-           <legend>Available List of TraAvailable List of Trains</legend>
-           <div id="citiesGrid">
+                    <fieldset id="fdsShowTrains">
+                        <legend>Available List of TraAvailable List of Trains</legend>
+                        <div id="citiesGrid">
+                        </div>
+                        <div class="middleDiv">
+                            <span class="rightSpan">&nbsp;</span>
+                        </div>
+                    </fieldset>
 
-            </div>
-           <div class="middleDiv">
-            <span class="rightSpan">
-                &nbsp;</span></div>
-        </fieldset>
-
-       <fieldset id="fdsAddPassengers">
-           <legend>Add Passenger Details</legend>
-            <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtAvailableTrain">
-                    Train :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtAvailableTrain" type="text" maxlength="40" placeholder="Train" readonly="true" />
-            </span>
-           </div>
-           <div class="middleDiv">
+                    <fieldset id="fdsAddPassengers">
+                        <legend>Add Passenger Details</legend>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtAvailableTrain">
+                                    Train :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input id="txtAvailableTrain" type="text" maxlength="40" placeholder="Train" readonly="true" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
                             <span class="leftSpan">
                                 <label for="txtTicketFrom">
-                                    From :<span class="Mandatory">*</span>
+                                    From :
                                 </label>
                             </span>
                             <span class="rightSpan">
-                               <input type="text" id="txtTicketFrom" />
+                                <input type="text" id="txtTicketFrom" />
                             </span>
-           </div>
-           <div class="middleDiv">
+                        </div>
+                        <div class="middleDiv">
                             <span class="leftSpan">
                                 <label for="txtTicketTo">
-                                    To :<span class="Mandatory">*</span>
+                                    To :
                                 </label>
                             </span>
                             <span class="rightSpan">
                                 <input type="text" id="txtTicketTo" />
                             </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtTrainName">
-                    Distance :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtDistance" type="text" maxlength="30" placeholder="Distance" readonly="true" />
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtTrainName">
-                    Fare :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtFare" type="text" maxlength="30" placeholder="Fare" readonly="true"/>
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtTrainName">
-                    Name :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtPassengerName" type="text" maxlength="30" placeholder="Name"/>
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtAge">
-                    Age :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtAge" type="text" maxlength="30" placeholder="Age" />
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="rdoGender">
-                    Gender :
-                </label>
-            </span>
-            <span class="rightSpan">
-               <span>
-                   <label><input id="rdoMale" type="radio" name="gender" />Male</label></span>
-                <span><label><input id="rdoFemale" type="radio" name="gender"/>Female</label></span>
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtContactNumber">
-                    Contact Number :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtContactNumber" type="text" maxlength="30" placeholder="Contact Number" />
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="leftSpan">
-                <label for="txtEmail">
-                    Email :
-                </label>
-            </span>
-            <span class="rightSpan">
-                <input id="txtEmail" type="text" maxlength="30" placeholder="Contact Number" />
-            </span>
-           </div>
-           <div class="middleDiv">
-            <span class="rightSpan">
-              </span>
-           </div>
-           <div class="middleDiv">
-            <span class="rightSpan">
-                <input type="button" id="btnAddPassenger" value="Book Ticket" class="Button"/>
-            </span>
-           </div>
-       </fieldset>
-   </div>
-  </div>
-  <div id="tabPNR">
-    <div class="middleDiv">
+                        </div>
+                        <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="txtPNR">
-                                    PNR Number :<span class="Mandatory">*</span>
+                                <label for="txtTrainName">
+                                    Distance :
                                 </label>
                             </span>
                             <span class="rightSpan">
-                               <input id="txtPNR" type="text" maxlength="30" placeholder="Contact Number" />
+                                <input id="txtDistance" type="text" maxlength="30" placeholder="Distance" readonly="true" />
                             </span>
-           </div>
-      <div class="middleDiv">
-            <span class="rightSpan">
-                <input type="button" id="btnPNRStatus" value="Status" class="Button"/>
-            </span>
-           </div>
-  </div>
-   <div id="tabScheduling">
-    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-  </div>
-    <div id="tabLogout">
-    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-  </div>
-</div>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtTrainName">
+                                    Fare :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input id="txtFare" type="text" maxlength="30" placeholder="Fare" readonly="true" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtTrainName">
+                                    Name :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input id="txtPassengerName" type="text" maxlength="30" placeholder="Name" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtAge">
+                                    Age :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input id="txtAge" type="text" maxlength="30" placeholder="Age" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="rdoGender">
+                                    Gender :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <span>
+                                    <label>
+                                        <input id="rdoMale" type="radio" name="gender" />Male</label></span>
+                                <span>
+                                    <label>
+                                        <input id="rdoFemale" type="radio" name="gender" />Female</label></span>
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="ddllNoOfPassengers">
+                                    Berth :<span class="Mandatory">*</span>
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <select class="chosen ddlWidth" id="ddllNoOfPassengers">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtContactNumber">
+                                    Contact Number :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input id="txtContactNumber" type="text" maxlength="30" placeholder="Contact Number" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtEmail">
+                                    Email :
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input id="txtEmail" type="text" maxlength="30" placeholder="Contact Number" />
+                            </span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="rightSpan"></span>
+                        </div>
+                        <div class="middleDiv">
+                            <span class="rightSpan">
+                                <input type="button" id="btnAddPassenger" value="Book Ticket" class="Button" />
+                            </span>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div id="tabPNR">
+                <div class="middleDiv">
+                    <span class="leftSpan">
+                        <label for="txtPNR">
+                            PNR Number :<span class="Mandatory">*</span>
+                        </label>
+                    </span>
+                    <span class="rightSpan">
+                        <input id="txtPNR" type="text" maxlength="30" placeholder="Contact Number" />
+                    </span>
+                </div>
+                <div class="middleDiv">
+                    <span class="rightSpan">
+                        <input type="button" id="btnPNRStatus" value="Status" class="Button" />
+                    </span>
+                </div>
+            </div>
+            <div id="tabScheduling">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            </div>
+            <div id="tabLogout">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            </div>
+        </div>
     </form>
 </body>
 </html>
