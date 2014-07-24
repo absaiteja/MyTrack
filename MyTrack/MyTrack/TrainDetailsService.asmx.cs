@@ -13,7 +13,7 @@ namespace MyTrack
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+     [System.Web.Script.Services.ScriptService]
     public class TrainDetailsService : System.Web.Services.WebService
     {
 
@@ -33,6 +33,15 @@ namespace MyTrack
         }
 
         [WebMethod]
+        public List<Entities.TrainDetails> GetSpecificTrainsbyFromToService()
+        {
+            Entities.TrainDetails objTD = new Entities.TrainDetails();
+            List<Entities.TrainDetails> lstTD = new List<Entities.TrainDetails>();
+            lstTD = objTD.GetAllTrains();
+            return lstTD;
+        }
+
+        [WebMethod]
         public Utilities.Response CreateTrainService()
         {
             Entities.TrainDetails objTD = new Entities.TrainDetails();
@@ -44,6 +53,14 @@ namespace MyTrack
             objTD.DepartureTime = "20:00";
             objTD.ArrivalTime = "12:00";
             Utilities.Response objRes = objTD.CreateTrain();
+            return objRes;
+        }
+
+        [WebMethod]
+        public Utilities.Response CreateTicketService(object [] data)
+        {
+            Entities.Ticket objTK = new Entities.Ticket();
+            Utilities.Response objRes = objTK.Create(data);
             return objRes;
         }
     }

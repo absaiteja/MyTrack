@@ -11,10 +11,11 @@
     <script src="Chosen/choosen/chosen.jquery.min.js"></script>
     <link href="Chosen/choosen/chosen.min.css" rel="stylesheet" />
     <script src="jqwidgets/jqx-all.js"></script>
-    <link href="jqwidgets/styles/jqx.metro.css" rel="stylesheet" />
-    <link href="CSS/StylesUsers.css" rel="stylesheet" />
+    <link href="jqwidgets/styles/jqx.base.css" rel="stylesheet" />
+     <link href="jqwidgets/styles/jqx.metro.css" rel="stylesheet" />
+   <%-- <link href="CSS/StylesUsers.css" rel="stylesheet" />--%>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"/>
-    <link rel="stylesheet" href="/resources/demos/style.css"/>
+  <%--  <link rel="stylesheet" href="/resources/demos/style.css"/>--%>
     <script src="Scripts/MyTrack.js"></script>
       
 </head>
@@ -43,7 +44,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                               <select class="chosen ddlWidth">
+                               <select class="chosen ddlWidth" id="ddlFrom">
                       <option value="Agra">Agra</option>
                       <option value="Hyderabad">Hyderabad</option>
                       <option value="Delhi">Delhi</option>
@@ -51,6 +52,7 @@
                     </select>
                             </span>
            </div>
+           <asp:Label ID="lblDisplayHtml" runat="server"></asp:Label>
            <div class="middleDiv">
                             <span class="leftSpan">
                                 <label for="txtTrainName">
@@ -58,7 +60,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                               <select class="chosen ddlWidth">
+                               <select class="chosen ddlWidth" id="ddlTo">
                       <option value="Agra">Agra</option>
                       <option value="Hyderabad">Hyderabad</option>
                       <option value="Delhi">Delhi</option>
@@ -68,7 +70,7 @@
            </div>
            <div class="middleDiv">
             <span class="leftSpan">
-                <label for="txtTrainName">
+                <label for="datepicker">
                     Date Of Journey :<span class="Mandatory">*</span>
                 </label>
             </span>
@@ -77,27 +79,39 @@
             </span>
            </div>
            <div class="middleDiv">
+            <span class="leftSpan">
+                <label for="datepicker">
+                    Berth :<span class="Mandatory">*</span>
+                </label>
+            </span>
             <span class="rightSpan">
-                <input type="button" id="btnSearchTrains" value="Find Trains" class="Button"/>
+                <select class="chosen ddlWidth">
+                      <option value="1">Lower</option>
+                      <option value="2">Middle</option>
+                      <option value="3">Upper</option>
+                </select>
+            </span>
+           </div>
+           <div class="middleDiv">
+            <span class="rightSpan">
+                <input type="button" id="btnSearchTrains" value="Find Trains" />
             </span>
            </div>
             </fieldset>
 
        <fieldset id="fdsShowTrains">
-           <legend>Available List of Trains</legend>
+           <legend>Available List of TraAvailable List of Trains</legend>
            <div id="citiesGrid">
 
             </div>
            <div class="middleDiv">
             <span class="rightSpan">
-                <input type="button" id="btnConfirmTrain" value="Confirm Train" class="Button"/>
-            </span>
-           </div>
+                &nbsp;</span></div>
         </fieldset>
 
        <fieldset id="fdsAddPassengers">
            <legend>Add Passenger Details</legend>
-                       <div class="middleDiv">
+            <div class="middleDiv">
             <span class="leftSpan">
                 <label for="txtAvailableTrain">
                     Train :
@@ -106,6 +120,26 @@
             <span class="rightSpan">
                 <input id="txtAvailableTrain" type="text" maxlength="40" placeholder="Train" readonly="true" />
             </span>
+           </div>
+           <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtTicketFrom">
+                                    From :<span class="Mandatory">*</span>
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                               <input type="text" id="txtTicketFrom" />
+                            </span>
+           </div>
+           <div class="middleDiv">
+                            <span class="leftSpan">
+                                <label for="txtTicketTo">
+                                    To :<span class="Mandatory">*</span>
+                                </label>
+                            </span>
+                            <span class="rightSpan">
+                                <input type="text" id="txtTicketTo" />
+                            </span>
            </div>
            <div class="middleDiv">
             <span class="leftSpan">

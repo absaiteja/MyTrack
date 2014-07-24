@@ -1,5 +1,7 @@
 ﻿$(document).ready(PageLoad);
 function PageLoad() {
+    $('#fdsShowTrains').hide();
+    $('#fdsAddPassengers').hide();
     $(function () {
         $("#Usertabs").tabs();
     });
@@ -11,15 +13,15 @@ function PageLoad() {
     CreateTrain();
     $('#citiesGrid').jqxGrid({
         width: '60%',
-        height: '40%',
+        height: '300px',
         columns: [
-        { text: 'Train Number', datafield: 'TrainNumber', hidden: true },
-        { text: 'Train', datafield: 'TrainName' },
-        { text: 'From', datafield: 'Source' },
-        { text: 'To', datafield: 'Destination' },
-        { text: 'Distance', datafield: 'Distance' },
-        { text: 'Arrival Time', datafield: 'ArrivalTime' },
-        { text: 'Departure Time', datafield: 'DepartureTime' },
+        { text: 'Train Number', datafield: 'TrainNumber', hidden: true,width:50 },
+        { text: 'Train', datafield: 'TrainName',width:40 },
+        { text: 'From', datafield: 'Source',width:40 },
+        { text: 'To', datafield: 'Destination',width:40 },
+        { text: 'Distance', datafield: 'Distance',width:40 },
+        { text: 'Arrival Time', datafield: 'ArrivalTime',width:40 },
+        { text: 'Departure Time', datafield: 'DepartureTime',width:40 },
         {
             text: 'Select Train', datafield: 'Edit', columntype: 'button', width: 50, cellsrenderer: function () {
                 return "Edit";
@@ -29,7 +31,12 @@ function PageLoad() {
                 var varSource = $("#citiesGrid").jqxGrid('getcellvalue', row, "Source");
                 var varDestination = $("#citiesGrid").jqxGrid('getcellvalue', row, "Destination");
                 var varDistance = $("#citiesGrid").jqxGrid('getcellvalue', row, "Distance");
-                alert(id);
+                $('#txtAvailableTrain').val(varTrainName);
+                $('#txtDistance').val(varDistance);
+                $('#txtTicketFrom').val(varSource);
+                $('#txtTicketTo').val(varDestination);
+                $('#fdsAddPassengers').show();
+                $('#fdsAddPassengers').focus();
                 //window.location = '/Customers/Edit/?id=' + id;
             }
         }
@@ -40,20 +47,35 @@ function PageLoad() {
         source: null
     });
     BindCities();
+    $("#btnSearchTrains").click(function () {
+        $('#fdsShowTrains').show();
+        $('#fdsShowTrains').focus();
+    });
+    $("#btnAddPassenger").click(function () {
+        CreateTicket();
+    });
 }
 
 
 
+
  function GetAllTrains() {
-     ajaxCaller("TrainDetailsService.asmx/GetAllTrainsService","{}",SuccessCall, FailureCall);
+     ajaxCaller("TrainDetailsService.asmx/GetSpecificTrainsbyFromToService", "{}", SuccessCall, FailureCall);
        }
 
  function CreateTrain() {
     ajaxCaller("TrainDetailsService.asmx/CreateTrainService", "{}", SuccessCall, FailureCall);
  }
 
+ function CreateTicket() {
+     var objTicket= {$('#').val(),$('#').val(),$('#').val(),$('#').val(),$('#').val()};
+     ajaxCaller("TrainDetailsService.asmx/CreateTrainService", "{}", SuccessCall, FailureCall);
+ }
+
+
  function BindCities() {
-     ajaxCaller("TrainDetailsService.asmx/GetAllTrainsService", "{}", SuccessCall, FailureCall);
+     var objData = JSON.stringify({});
+     ajaxCaller("TrainDetailsService.asmx/GetAllTrainsService", objData , SuccessCall, FailureCall);
  }
 
 function SuccessCall(data) {

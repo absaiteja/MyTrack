@@ -11,7 +11,8 @@ namespace MyTrack
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //string strTemp="<label>Test Date Of Journey Test Test:<span>*</span></label>";
+            //lblDisplayHtml.Text = strTemp;
         }
     }
 }
