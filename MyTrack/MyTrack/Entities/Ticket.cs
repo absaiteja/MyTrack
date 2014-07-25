@@ -53,15 +53,13 @@ namespace MyTrack.Entities
         [Display(Name = "Fare")]
         public double Fare { get; set; }
 
-        public Response Create()
+        public Response Create(object[] arrObj)
         {
             string strConnection = Properties.Settings.Default.Connection;
             string[] strArrParameterName = { "SNo", "TicketId", "PNRNumber", "Source","Destination",
                                             "DateOfJourney","DateOfBooking","NoOfPassengers","Name",
                                             "Age","Gender","BerthPreference","Fare" };
-            object[] objArrParameterValue = { this.SNo,this.TickerId,this.PNRNumber,this.Source,this.Destination,
-                                             this.DateOfJourney,this.DateOfBooking,this.NoOfPassengers,this.Name,
-                                             this.Age,this.Gender,this.BerthPreference,this.Fare };
+            object[] objArrParameterValue = arrObj;
             string strQuery = @"INSERT INTO [Ticket]([SNo],[TicketId],[PNRNumber],
                                 [Source],[Destination],[DateOfJourney],
                                 [DateOfBooking],[NoOfPassengers],[Name],

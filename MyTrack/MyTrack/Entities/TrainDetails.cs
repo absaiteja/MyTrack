@@ -121,6 +121,7 @@ namespace MyTrack.Entities
                                                                  FROM [TrainDetails] WHERE [TrainNumber] = @TrainNumber", strArrParamNames, objArrParamValues);
             for (int i = 0; i < dtTrainDetails.Rows.Count; i++)
             {
+                
                 int intTemp = int.MinValue;
                 int.TryParse(dtTrainDetails.Rows[i]["TrainNumber"].ToString(), out intTemp);
                 objTD.TrainNumber = intTemp;
@@ -133,6 +134,40 @@ namespace MyTrack.Entities
                 objTD.DepartureTime = Convert.ToString(dtTrainDetails.Rows[i]["DepartureTime"]);
             }
             return objTD;
+        }
+
+        public List<TrainDetails> GetSpecificTrainsbyFromTo()
+        {
+           
+            DBOperations objSqlDbEx = new DBOperations(Properties.Settings.Default.Connection);
+            string[] strArrParamNames = { "Source", "Destination" };
+            object[] objArrParamValues = { this.Source,this.Destination };
+            List<TrainDetails> lstWT = new List<TrainDetails>();
+            dtTrainDetails = DBOperations.ExecuteQueryForAll(Properties.Settings.Default.Connection, @"SELECT [TrainNumber]
+                                                                                                      ,[TrainName]
+                                                                                                      ,[Source]
+                                                                                                      ,[Destination]
+                                                                                                      ,[Distance]
+                                                                                                      ,[ArrivalTime]
+                                                                                                      ,[DepartureTime]
+                                                                                                  FROM [TrainDetails] where 
+                                                                                                  [Source]=@Source and [Destination]=@Destination", strArrParamNames, objArrParamValues);
+            for (int i = 0; i < dtTrainDetails.Rows.Count; i++)
+            {
+                TrainDetails objTD = new TrainDetails();
+                int intTemp = int.MinValue;
+                int.TryParse(dtTrainDetails.Rows[i]["TrainNumber"].ToString(), out intTemp);
+                objTD.TrainNumber = intTemp;
+                objTD.TrainName = dtTrainDetails.Rows[i]["Source"].ToString();
+                objTD.Source = dtTrainDetails.Rows[i]["Destination"].ToString();
+                objTD.Destination = Convert.ToString(dtTrainDetails.Rows[i]["Worker_WType_Id"]);
+                int.TryParse(dtTrainDetails.Rows[i]["TrainNumber"].ToString(), out intTemp);
+                objTD.Distance = intTemp;
+                objTD.ArrivalTime = Convert.ToString(dtTrainDetails.Rows[i]["ArrivalTime"]);
+                objTD.DepartureTime = Convert.ToString(dtTrainDetails.Rows[i]["DepartureTime"]);
+                lstWT.Add(objTD);
+            }
+            return lstWT;
         }
     }
 }
