@@ -80,15 +80,15 @@
                         </div>
                         <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="datepicker">
+                                <label for="ddlBerth">
                                     Berth :<span class="Mandatory">*</span>
                                 </label>
                             </span>
                             <span class="rightSpan">
                                 <select class="chosen ddlWidth" id="ddlBerth">
-                                    <option value="1">Lower</option>
-                                    <option value="2">Middle</option>
-                                    <option value="3">Upper</option>
+                                    <option value="Lower">Lower</option>
+                                    <option value="Middle">Middle</option>
+                                    <option value="Upper">Upper</option>
                                 </select>
                             </span>
                         </div>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="txtTrainName">
+                                <label for="txtPassengerName">
                                     Name :
                                 </label>
                             </span>
@@ -202,7 +202,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                                <select class="chosen ddlWidth" id="ddllNoOfPassengers">
+                                <select class="chosen ddlWidth" id="ddllNoOfPassengers" style="width: 65px;">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>

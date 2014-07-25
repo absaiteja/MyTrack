@@ -53,13 +53,14 @@ namespace MyTrack.Entities
         [Display(Name = "Fare")]
         public double Fare { get; set; }
 
-        public Response Create(object[] arrObj)
+       public Response CreateTicket(object[] objCreateTicket)
         {
             string strConnection = Properties.Settings.Default.Connection;
             string[] strArrParameterName = { "SNo", "TicketId", "PNRNumber", "Source","Destination",
                                             "DateOfJourney","DateOfBooking","NoOfPassengers","Name",
                                             "Age","Gender","BerthPreference","Fare" };
-            object[] objArrParameterValue = arrObj;
+            object[] objArrParameterValue = objCreateTicket;
+
             string strQuery = @"INSERT INTO [Ticket]([SNo],[TicketId],[PNRNumber],
                                 [Source],[Destination],[DateOfJourney],
                                 [DateOfBooking],[NoOfPassengers],[Name],
