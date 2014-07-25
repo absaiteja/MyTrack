@@ -14,8 +14,8 @@ namespace MyTrack.Entities
         const string Success_MSG = "Successfully {0} a Ticket";
         const string Failure_MSG = "Unable to {0} a Ticket";
 
-        [Display(Name = "SNo")]
-        public int SNo { get; set; }
+        [Display(Name = "SId")]
+        public int SId { get; set; }
 
         [Display(Name = "TickerId", Description = "Primarykey")]
         public int TickerId { get; set; }
@@ -53,22 +53,25 @@ namespace MyTrack.Entities
         [Display(Name = "Fare")]
         public double Fare { get; set; }
 
-       public Response CreateTicket(object[] objCreateTicket)
+        public Response CreateTicket(object[] objCreateTicket)
         {
             string strConnection = Properties.Settings.Default.Connection;
-            string[] strArrParameterName = { "SNo", "TicketId", "PNRNumber", "Source","Destination",
-                                            "DateOfJourney","DateOfBooking","NoOfPassengers","Name",
-                                            "Age","Gender","BerthPreference","Fare" };
+            string[] strArrParameterName = { "PNRNumber", "Source","Destination",
+                                            "DateOfJourney","DateOfBooking","NoOfPassengers","ArrivalTime"
+                                            ,"DepartureTime","Fare","Name",
+                                            "Age","Gender","BerthPreference" };
             object[] objArrParameterValue = objCreateTicket;
 
-            string strQuery = @"INSERT INTO [Ticket]([SNo],[TicketId],[PNRNumber],
+            string strQuery = @"INSERT INTO [Ticket]([PNRNumber],
                                 [Source],[Destination],[DateOfJourney],
-                                [DateOfBooking],[NoOfPassengers],[Name],
+                                [DateOfBooking],[NoOfPassengers],[ArrivalTime],
+                                [DepartureTime],[Fare],[Name],
                                 [Age],[Gender],[BerthPreference])
-                                    VALUES(@TicketId,@PNRNumber,@Source
+                                    VALUES(@PNRNumber,@Source
                                 ,@Destination,@DateOfJourney,@DateOfBooking
-                                ,@NoOfPassengers,@Name,@Age,@Gender
-                                ,@BerthPreference,@Fare)";
+                                ,@NoOfPassengers,@ArrivalTime,@DepartureTime,@Fare,@Name
+                                ,@Age,@Gender
+                                ,@BerthPreference)";
             DBOperations objDBOperations = new DBOperations(strConnection);
             bool blnResult = objDBOperations.ExecuteQuery(strQuery, strArrParameterName, objArrParameterValue);
 
@@ -98,10 +101,10 @@ namespace MyTrack.Entities
                               ,[BerthPreference] = @BerthPreference
                               ,[Fare] = @Fare
                               WHERE TicketId = @TicketId";
-            string[] strArrParameterName = { "SNo", "TicketId", "PNRNumber", "Source","Destination",
+            string[] strArrParameterName = { "SId", "TicketId", "PNRNumber", "Source","Destination",
                                             "DateOfJourney","DateOfBooking","NoOfPassengers","Name",
                                             "Age","Gender","BerthPreference","Fare" };
-            object[] objArrParameterValue = { this.SNo,this.TickerId,this.PNRNumber,this.Source,this.Destination,
+            object[] objArrParameterValue = { this.SId,this.TickerId,this.PNRNumber,this.Source,this.Destination,
                                              this.DateOfJourney,this.DateOfBooking,this.NoOfPassengers,this.Name,
                                              this.Age,this.Gender,this.BerthPreference,this.Fare };
             DBOperations objDBOperations = new DBOperations(strConnection);
@@ -120,10 +123,10 @@ namespace MyTrack.Entities
         {
             string strConnection = Properties.Settings.Default.Connection;
             string strQuery = @"DELETE FROM [Ticket] WHERE TicketId = @TicketId";
-            string[] strArrParameterName = { "SNo", "TicketId", "PNRNumber", "Source","Destination",
+            string[] strArrParameterName = { "SId", "TicketId", "PNRNumber", "Source","Destination",
                                             "DateOfJourney","DateOfBooking","NoOfPassengers","Name",
                                             "Age","Gender","BerthPreference","Fare" };
-            object[] objArrParameterValue = { this.SNo,this.TickerId,this.PNRNumber,this.Source,this.Destination,
+            object[] objArrParameterValue = { this.SId,this.TickerId,this.PNRNumber,this.Source,this.Destination,
                                              this.DateOfJourney,this.DateOfBooking,this.NoOfPassengers,this.Name,
                                              this.Age,this.Gender,this.BerthPreference,this.Fare };
             DBOperations objDBOperations = new DBOperations(strConnection);
@@ -141,7 +144,7 @@ namespace MyTrack.Entities
         public static Ticket Get(int TicketId)
         {
             Ticket objTicket = new Ticket();
-            string strQuery = @"SELECT [SNo],[TicketId],[PNRNumber]
+            string strQuery = @"SELECT [SId],[TicketId],[PNRNumber]
                               ,[Source],[Destination],[DateOfJourney]
                               ,[DateOfBooking],[NoOfPassengers],[Name]
                               ,[Age],[Gender],[BerthPreference],[Fare]
@@ -151,7 +154,7 @@ namespace MyTrack.Entities
             DataTable dtRetVal = new DataTable();
             DBOperations objoperations = new DBOperations(Properties.Settings.Default.Connection);
             dtRetVal = DBOperations.ExecuteQueryForAll(Properties.Settings.Default.Connection, strQuery, strArrParameterName, objArrparameterValue);
-            int intSNo;
+            int intSId;
             int intTicketId;
             double dblPNRNumber;
             int intNoOfPassengers;
@@ -160,8 +163,8 @@ namespace MyTrack.Entities
 
             if (dtRetVal.Rows.Count > 0)
             {
-                int.TryParse(dtRetVal.Rows[0]["SNo"].ToString(), out intSNo);
-                objTicket.SNo = intSNo;
+                int.TryParse(dtRetVal.Rows[0]["SId"].ToString(), out intSId);
+                objTicket.SId = intSId;
                 int.TryParse(dtRetVal.Rows[0]["TicketId"].ToString(), out intTicketId);
                 objTicket.TickerId = intTicketId;
                 double.TryParse(dtRetVal.Rows[0]["PNRNumber"].ToString(), out dblPNRNumber);
@@ -184,12 +187,69 @@ namespace MyTrack.Entities
             return objTicket;
         }
 
+        public static Ticket GetFromPnr(string PNRNumber)
+        {
+            Ticket objTicket = new Ticket();
+            string strQuery = @"SELECT [SId]
+                              ,[TicketId]
+                              ,[PNRNumber]
+                              ,[Source]
+                              ,[Destination]
+                              ,[DateOfJourney]
+                              ,[DateOfBooking]
+                              ,[NoOfPassengers]
+                              ,[ArrivalTime]
+                              ,[DepartureTime]
+                              ,[Fare]
+                              ,[Name]
+                              ,[Age]
+                              ,[Gender]
+                              ,[BerthPreference]
+                          FROM [Ticket] where [PNRNumber] = @PNRNumber";
+            string[] strArrParameterName = { "PNRNumber" };
+            object[] objArrparameterValue = { PNRNumber };
+            DataTable dtRetVal = new DataTable();
+            DBOperations objoperations = new DBOperations(Properties.Settings.Default.Connection);
+            dtRetVal = DBOperations.ExecuteQueryForAll(Properties.Settings.Default.Connection, strQuery, strArrParameterName, objArrparameterValue);
+            int intSId;
+            int intTicketId;
+            double dblPNRNumber;
+            int intNoOfPassengers;
+            int intAge;
+            double dblFare;
+
+            if (dtRetVal.Rows.Count > 0)
+            {
+                int.TryParse(dtRetVal.Rows[0]["SId"].ToString(), out intSId);
+                objTicket.SId = intSId;
+                int.TryParse(dtRetVal.Rows[0]["TicketId"].ToString(), out intTicketId);
+                objTicket.TickerId = intTicketId;
+                double.TryParse(dtRetVal.Rows[0]["PNRNumber"].ToString(), out dblPNRNumber);
+                objTicket.PNRNumber = dblPNRNumber;
+                objTicket.Source = dtRetVal.Rows[0]["Source"] != null ? dtRetVal.Rows[0]["Source"].ToString() : string.Empty;
+                objTicket.Destination = dtRetVal.Rows[0]["Destination"] != null ? dtRetVal.Rows[0]["Destination"].ToString() : string.Empty;
+                objTicket.DateOfJourney = dtRetVal.Rows[0]["DateOfJourney"] != null ? dtRetVal.Rows[0]["DateOfJourney"].ToString() : string.Empty;
+                objTicket.DateOfBooking = dtRetVal.Rows[0]["DateOfBooking"] != null ? dtRetVal.Rows[0]["DateOfBooking"].ToString() : string.Empty;
+                int.TryParse(dtRetVal.Rows[0]["NoOfPassengers"].ToString(), out intNoOfPassengers);
+                objTicket.NoOfPassengers = intNoOfPassengers;
+                objTicket.Name = dtRetVal.Rows[0]["Name"] != null ? dtRetVal.Rows[0]["Name"].ToString() : string.Empty;
+                int.TryParse(dtRetVal.Rows[0]["Age"].ToString(), out intAge);
+                objTicket.Age = intAge;
+                objTicket.Gender = dtRetVal.Rows[0]["Gender"] != null ? dtRetVal.Rows[0]["Gender"].ToString() : string.Empty;
+                objTicket.BerthPreference = dtRetVal.Rows[0]["BerthPreference"] != null ? dtRetVal.Rows[0]["BerthPreference"].ToString() : string.Empty;
+                double.TryParse(dtRetVal.Rows[0]["Fare"].ToString(), out dblFare);
+                objTicket.Fare = dblFare;
+            }
+            objoperations.CloseConnection();
+            return objTicket;
+        }
+
         public static List<Ticket> GetAllDetails()
         {
             List<Ticket> lstTicket = new List<Ticket>();
             Ticket objTicket = null;
 
-            string strQuery = @"SELECT [SNo],[TicketId],[PNRNumber]
+            string strQuery = @"SELECT [SId],[TicketId],[PNRNumber]
                               ,[Source],[Destination],[DateOfJourney]
                               ,[DateOfBooking],[NoOfPassengers],[Name]
                               ,[Age],[Gender],[BerthPreference],[Fare]
@@ -200,7 +260,7 @@ namespace MyTrack.Entities
             DBOperations objoperations = new DBOperations(Properties.Settings.Default.Connection);
             string str = Properties.Settings.Default.Connection;
             dtRetVal = DBOperations.ExecuteQueryForAll(str, strQuery, strArrColNames, objArrColValue);
-            int intSNo;
+            int intSId;
             int intTicketId;
             double dblPNRNumber;
             int intNoOfPassengers;
@@ -210,8 +270,8 @@ namespace MyTrack.Entities
             {
                 objTicket = new Ticket();
 
-                int.TryParse(dtRetVal.Rows[i]["SNo"].ToString(), out intSNo);
-                objTicket.SNo = intSNo;
+                int.TryParse(dtRetVal.Rows[i]["SId"].ToString(), out intSId);
+                objTicket.SId = intSId;
                 int.TryParse(dtRetVal.Rows[i]["TicketId"].ToString(), out intTicketId);
                 objTicket.TickerId = intTicketId;
                 double.TryParse(dtRetVal.Rows[i]["PNRNumber"].ToString(), out dblPNRNumber);

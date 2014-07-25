@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
     <%--  <link rel="stylesheet" href="/resources/demos/style.css"/>--%>
     <script src="Scripts/MyTrack.js"></script>
+    <link href="CSS/UserStyles.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -27,7 +28,7 @@
                 <li><a href="#tabReservations">Reservations</a></li>
                 <li><a href="#tabPNR">PNR</a></li>
                 <li><a href="#tabScheduling">Scheduling</a></li>
-                <li><a href="#tabLogout">Logout</a></li>
+                <li id="logOut"><a href="#tabLogout">Logout</a></li>
             </ul>
             <div id="tabHome">
                 <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
@@ -39,7 +40,7 @@
                         <legend>Search Trains</legend>
                         <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="txtTrainName">
+                                <label for="ddlFrom">
                                     From :<span class="Mandatory">*</span>
                                 </label>
                             </span>
@@ -55,7 +56,7 @@
                         <asp:Label ID="lblDisplayHtml" runat="server"></asp:Label>
                         <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="txtTrainName">
+                                <label for="ddlTo">
                                     To :<span class="Mandatory">*</span>
                                 </label>
                             </span>
@@ -101,7 +102,7 @@
 
                     <fieldset id="fdsShowTrains">
                         <legend>Available List of TraAvailable List of Trains</legend>
-                        <div id="citiesGrid">
+                        <div id="TrainsGrid">
                         </div>
                         <div class="middleDiv">
                             <span class="rightSpan">&nbsp;</span>
@@ -127,7 +128,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                                <input type="text" id="txtTicketFrom" />
+                                <input type="text" id="txtTicketFrom" readonly="true" />
                             </span>
                         </div>
                         <div class="middleDiv">
@@ -137,12 +138,12 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                                <input type="text" id="txtTicketTo" />
+                                <input type="text" id="txtTicketTo" readonly="true" />
                             </span>
                         </div>
                         <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="txtTrainName">
+                                <label for="txtDistance">
                                     Distance :
                                 </label>
                             </span>
@@ -152,7 +153,7 @@
                         </div>
                         <div class="middleDiv">
                             <span class="leftSpan">
-                                <label for="txtTrainName">
+                                <label for="txtFare">
                                     Fare :
                                 </label>
                             </span>
@@ -177,7 +178,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                                <input id="txtAge" type="text" maxlength="30" placeholder="Age" />
+                                <input id="txtAge" type="text" maxlength="3" placeholder="Age" />
                             </span>
                         </div>
                         <div class="middleDiv">
@@ -202,7 +203,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                                <select class="chosen ddlWidth" id="ddllNoOfPassengers" style="width: 65px;">
+                                <select class="ddlWidth" id="ddllNoOfPassengers">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -228,7 +229,7 @@
                                 </label>
                             </span>
                             <span class="rightSpan">
-                                <input id="txtEmail" type="text" maxlength="30" placeholder="Contact Number" />
+                                <input id="txtEmail" type="text" maxlength="30" placeholder="Email Id" />
                             </span>
                         </div>
                         <div class="middleDiv">
@@ -256,12 +257,15 @@
                 <div class="middleDiv">
                     <span class="rightSpan">
                         <input type="button" id="btnPNRStatus" value="Status" class="Button" />
+
+                        <asp:HiddenField ID="hdnPnr" runat="server" />
                     </span>
                 </div>
             </div>
             <div id="tabScheduling">
-                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                <p>
+                    Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.
+                    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
             </div>
             <div id="tabLogout">
                 <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>

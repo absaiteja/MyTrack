@@ -13,6 +13,20 @@ namespace MyTrack
         {
             //string strTemp="<label>Test Date Of Journey Test Test:<span>*</span></label>";
             //lblDisplayHtml.Text = strTemp;
+            hdnPnr.Value = GenerateRandomNumber();
+            Session["Pnr"] = hdnPnr.Value;
+
+        }
+        public string GenerateRandomNumber()
+        {
+            Random random = new Random();
+            string r = "";
+            int i;
+            for (i = 1; i < 11; i++)
+            {
+                r += random.Next(0, 9).ToString();
+            }
+            return r;
         }
     }
 }
