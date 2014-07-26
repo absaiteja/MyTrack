@@ -1,5 +1,6 @@
 ﻿$(document).ready(PageLoad);
 function PageLoad() {
+    $('#btnPrintTicket').hide();
     $('#fdsShowTrains').hide();
     $('#fdsAddPassengers').hide();
     $('#logOut').on("click", function () {
@@ -57,9 +58,15 @@ function PageLoad() {
     });
     $("#btnAddPassenger").click(function () {
         CreateTicket();
-        var url = "PrintTicket.aspx";
-        $(location).attr('href', url);
+        $('#btnPrintTicket').show();
     });
+    $('#btnPrintTicket').click(function(){
+        PrintTicket();
+    });
+}
+function PrintTicket() {
+    var url = "PrintTicket.aspx";
+    $(location).attr('href', url);
 }
 
 
